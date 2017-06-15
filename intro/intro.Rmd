@@ -1,0 +1,187 @@
+---
+title: "Reproducible Research"
+subtitle: "Automate Your Science"
+author: Robert M. Porsch
+output:
+  ioslides_presentation:
+    smaller: false
+---
+
+# Introduction
+
+## Topics
+
+* Version Control
+* Analysis Pipeline 
+* Dynamic Documents
+
+## About the Me
+
+* PhD student at the Department of Psychiatry
+* Actually at the Center of Genomic Science (CGS)
+* Mostly statistical analysis of genomic data and method development
+* I do most of my analysis in `R`, `Python`, and `C++`
+
+<img src="hri-s.jpg" width="400" height="300" />
+
+# Why is reproducibility important?
+
+## Some general statistics
+
+A recent (2016) survey by [Nature](https://doi.org/10.1038%2F533452a) found that:
+
+* 70% of scientist fail to reproduce other scientist's experiments 
+* 50% fail to reproduce their own experiments
+* 2% admitted to falsify study results
+* 14% say they know at least one person who falsified study results
+
+## Replication vs. Reproducibility
+
+Some clarification what is the difference between the two ([Source](https://simplystatistics.org/2016/08/24/replication-crisis/)):
+
+* *replication*: The act of repeating an entire study
+* *reproducibility*: Usage of the same data and computer code to reproduce the original study
+
+Here I want to focus on **reproducibility** only.
+However, these two are intertwined 
+
+## Crisis of Replication in Psychology
+
+* Only 36 of 100 papers from high-ranking journals were successfully replicated ([Source](https://www.ncbi.nlm.nih.gov/pubmed/26315443))
+* Social Psychology had a lower replication rate than Cognitive Psychology
+
+**Why is that? (from a Data perspective)**
+
+* data is not shared
+* analysis code is not shared
+* p-value fishing
+* faster speed of data prodcution
+
+**Its a multi facet problem**
+
+## Replication Problems in Medicine
+
+* FDA found flaws in 10-20% of studies (1977-90) ([Source](https://doi.org/10.1080%2F08989629208573811))
+* in a sample of 49 studies ([Source](https://www.ncbi.nlm.nih.gov/pubmed/16014596))
+  * 16% of studies investigating therapy effects were contradicted by later studies
+  * 44% were replicated
+  * 24% were never challenged 
+
+* data is rarely published in medical trail studies
+* protocols are not shared
+* BUT: pre-registration is more common
+* sample sizes are commonly larger
+
+## How can reproducibility help?
+
+* Publish your data
+* Publish your analysis script
+* You add credibility and accountability
+* Enable others to build on your data/analysis
+
+**Some Steps you can do:**
+
+* make your data citeable
+* have a public repository
+
+**Some additional perks:**
+
+* you automate your whole analysis
+* you automate your paper
+
+# Example
+
+## The project
+
+* You collect data on the prevalence of diabetes in HK
+* In addition you also collect data on:
+    * living conditions (SES, occupation, marital status, etc.)
+    * basic data on height, weight, etc.
+    * average consumption of sugar
+
+**Question:**
+
+What factors are correlated with diabetes status?
+
+## Data Processing
+
+* Data is **messy**
+  * missing values
+  * variables which are partially overlapping
+* Data needs to be prepared
+
+**Benefits of automating this:**
+
+* it can be repeated
+* errors can be tracked down
+* the process is documented 
+* it can be re-used
+
+## Data Processing
+
+<img src="images.png"/>
+
+* each iteration is a different model
+* the next iteration does not mean its a better model
+* each step needs to be documented (in case you want to go back)
+
+## Version Control Data Processing
+
+<img src="branch.png"/>
+
+* each branch is a different model
+* allows to keep track of what you have done
+* allows to go back to previous versions
+
+## Presentation of your Results
+
+* copying from the analysis to the report can create mistakes
+* labor intensive
+* not fun
+* might need to do it multiple times
+
+## Presentation of your Results
+
+* *dynamic documents* are responsive to changes in the source code
+
+**Lets say you have the following code:**
+
+```{r}
+mean(cars$speed)
+```
+
+**In a dynamic document you could write:**
+
+The mean speed of analysed cars was `mean(cars$speed)`.
+
+**Which would result in:**
+
+The mean speed of analysed cars was `r mean(cars$speed)`.
+
+# Outline
+
+## Part 1 - Version Control
+
+* How is version control useful for data analysis?
+* The basics of version control using `git`
+* Create a `git` project, add some files and commit
+* Going back in history (`git` style)
+* Branching
+* Github and others
+* Group project
+
+## Part 2 - Analysis Pipelines and Dynamic Documents
+
+* The concept of analysis recipes
+* MakeFiles and others
+* The Basics of `Rmakrdown`
+* Tables and Figures
+* Advanced `Rmakrdown` - using the cache, complicated tables, references and more
+* Group Project
+
+# Setup
+
+## Software
+
+* Rstudio
+* Git
