@@ -194,3 +194,118 @@ git clone ...
 # Branches
 
 ## What are branches?
+
+**Divert from your current work and start something new without messing up your latest files**
+
+**Example:**
+
+```{r, eval=F}
+data(iris)
+summary(iris)
+
+new_functions <- function(k) {
+  return(k^2)
+}
+```
+
+```{r, eval=F}
+new_functions <- function(k) {
+  return(k*2)
+}
+```
+
+## Branches
+
+
+```bash
+git branch testing
+git checkout testing
+```
+
+<img src="https://git-scm.com/book/en/v2/images/head-to-master.png" width="600" height="100" />
+
+## Branches
+
+```
+git checkout testing
+```
+
+<img src="https://git-scm.com/book/en/v2/images/head-to-testing.png" width="600" height="100" />
+
+
+## Branches
+
+```
+git commit -a -m 'made a change'
+git checkout master
+```
+
+<img src="https://git-scm.com/book/en/v2/images/checkout-master.png" width="600" height="100" />
+
+## Branches
+
+```
+git commit -a -m 'made other changes'
+```
+
+<img src="https://git-scm.com/book/en/v2/images/advance-master.png" width="600" height="100" />
+
+## Merging
+
+* lets say you developed a new model in a separate branch `new_model`
+* you want to merge this branch into your main branch `master`
+
+```bash
+git checkout master
+git merge new_model
+```
+<div class="centered">
+**merge conflicts** or **no merge conflicts**
+</div>
+
+## Merge conflicts
+
+```{r, eval=F}
+<<<<<<< HEAD:analysis.R
+summary(iris)
+=======
+summary(iris[,1])
+>>>>>>> iss53:analysis.R
+```
+
+You can use `git mergetool` to manage merge conflicts
+
+# Exercise: Using Everything to Analyse a dataset
+
+## Project
+
+* please form again groups of 3-4 people
+* this project will be the basis of the next part of the workshop
+* chose a data set
+* analyse the data set 
+    * decide who does what (tasks will be given)
+    * make a new github repository
+    * it should be one script which does all the work
+
+## The datasets and Research Questions
+
+## The tasks
+
+* What are the summary statistics
+  * tables
+  * plots (save plots to disk)
+* What is your model?
+  * What is the performance of your model?
+  * What variables are relevant
+* Give a brief presentation
+
+**Some example:**
+
+```{r}
+data(iris)
+print(summary(iris))
+
+jpeg("histogram.jpeg")
+hist(iris[,2])
+dev.off()
+```
