@@ -1,0 +1,196 @@
+---
+title: "Introduction to Git"
+subtitle: "A flexible version control system"
+author: Robert M. Porsch
+output:
+  ioslides_presentation:
+    smaller: false
+---
+
+# What is version control
+
+## Definition
+
+**A version control system is software that tracks and manges changes to files over their lifetime**
+
+* allows to revert back to previous versions
+* restore accidentally deleted files
+* try something new without inferring with the existing version
+* review why something broke
+* coordinating with others
+* maintain multiple versions of the same project
+
+## Why use git?
+
+* its either `git` or `svn`
+* `git` has become very popular
+* `git` is used by nearly everyone in computer science
+* `git` is flexible
+* `git` is easy to use
+* `git` has a large supporting packages and tutorials
+
+# Basics of git
+
+## Example Project
+
+**Lets say you have some project with the following files:**
+
+```
+data.csv
+analysis.R
+analysis_2.R
+analysis_02122016.R
+results.txt
+```
+
+You actually only need 3 files (data.csv, analysis.R, results.txt)
+
+
+## Snapshots
+
+<img src="https://git-scm.com/book/en/v2/images/snapshots.png" width="600" height="100" />
+
+* git takes a snapshot of all your files  (line a picture)
+* if files haven't changed it creates a link to the previous identical file
+* each version is like a mini file system
+
+## Integrity of snapshots
+
+* you can make changes in snapshots 
+* but it is **impossible** to change files in previous snapshots and `git` NOT knowing about it
+  * you cannot lose information
+  * but you still can modify your files
+  * git just creates a new snapshot for you
+* each snapshot gets a name (by computation)
+  * `24b9da6552252987aa493b52f8696cd6d3b00373`
+  * called a checksum
+  * its unique
+
+## The Three States
+
+<img src="https://git-scm.com/book/en/v2/images/areas.png" width="400" height="400" />
+
+## Basic Workflow
+
+* you modify some files
+* you stage the files you want to commit
+* you do a commit and store the snapshot in your database
+
+## Why is there a staging and committing stage
+
+* you can add files progressively 
+* you can review files before committing
+* it checks if files might have been modified but not added
+
+# Practical Example With Rstudio
+
+## Rstudio's git interface
+
+* Rstudio has a nice interface to git
+* You can also use the command like (called `Git Bash` in windows)
+   * Linux and Mac users can just use the terminal
+
+**Task 1:**
+
+* create a new R project under version control
+* within this project create the following files:
+    * `analysis.R`
+    * README.md
+* write something in the files
+
+
+## Insert your credentials
+
+**Task 2:**
+
+* open the terminal (or `Git bash`)
+* go to your project folder
+    * for example use: `cd /C/project/version-control-demo`
+    * cd means `change directory`
+    * you can use `<TAB>` for autocomplete
+
+Change the git configuration with:
+
+```bash
+git config --global user.email "your@mail.com"
+git config --global user.name "YourFirstName YourLastName"
+```
+
+## Commit Changes
+
+**Task 3:**
+
+* stage your files
+* commit your files
+* type `git log` in your terminal
+
+## The command line
+
+* the command line is not essential
+* its useful to know anyway
+
+**git add:**
+
+```bash
+git add analysis.R
+```
+
+**git commit:**
+
+```bash
+git commit -m "message"
+```
+
+**git log:**
+
+```bash
+git log
+```
+
+## Some more useful commands
+
+```bash
+git init
+```
+
+```bash
+git clone
+```
+
+# Project: Iris
+
+## Data Description
+
+```{r}
+data(iris)
+head(iris)
+```
+
+## Groups
+
+* Form groups of 3-4
+* get the repository with `git clone` from github
+* Open the `analysis.R` file
+
+**Tasks:**
+
+* each member completes one task in `analysis.R` 
+* if you don't know how it works, just google a bit
+* merge your different versions together
+
+## Task View
+
+```bash
+git clone ...
+```
+
+* Complete tasks in `analysis.R`
+* create a new repository on github (you need to make an account)
+* invite your team members
+* use `git push` to add your work
+* **I purposefully  did not explain everything**
+
+
+# Branches
+
+## What are branches?
