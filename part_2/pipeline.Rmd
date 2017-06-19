@@ -1,0 +1,76 @@
+---
+title: "Research Pipelines"
+subtitle: "Simplify Your Research"
+author: Robert M. Porsch
+output:
+  ioslides_presentation:
+    smaller: false
+---
+
+# The Idea
+
+## A Pipeline
+
+
+## Download and Formating
+
+**Step 1:**
+```{r, eval=F}
+download.file("www.some_data.com/data.csv")
+```
+
+**Step 2:**
+```{r, eval=F}
+dat  <- read.csv("data.csv")
+dat[,"Sum"] <- sum(dat[,1:2], na.rm=T)
+write.csv(dat, "data_modified.csv")
+```
+
+**Step 3:**
+```{r, eval=F}
+dat <- read.csv("data_modified.csv")
+analysis(dat)
+```
+* step 1 should be before step 2
+* we should not repeat step 1 when we modify step 2
+* use Makefiles
+
+
+## What is a Makefile?
+
+* `make` is an application which can execute make files
+* Makefiles contain collection of commands
+* keeps track of the last time files have been updated
+* it contains a list of rules
+
+```makefile
+RULE: DEPENDENCY LINE
+  ACTION LINE(S)
+```
+
+**DEPENDENCY LINE:**
+
+<span style="color:red"> TARGET FILES </span>:
+<span style="color:blue"> SOURCE FILES </span>
+
+## Makefiles
+
+```makefile
+all: data.csv data_modidified.csv results.txt
+
+clean:
+  rm data.csv data_modidified.csv results.txt
+
+data.csv:
+  Rscript -e 'download.file("www.some_data.com/data.csv")'
+
+data_modidified.csv: formating.R data.csv
+  Rscript $<
+
+results.txt: analysis.R data_modidified.csv
+  Rscript $<
+```
+
+## Exercise
+
+**Use your the results and scripts from your previous task to write a makefile**
