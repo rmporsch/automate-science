@@ -80,3 +80,8 @@ $\sum^P_{p=1} x_p$
 
 ## Example
 
+## Exercise 
+
+* Write a report in Rmarkdown
+* Make a presentation in Rmarkdown
+
