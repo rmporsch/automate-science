@@ -1,0 +1,99 @@
+---
+title: "Example"
+subtitle: "A complex and not so complex example"
+author: Robert M. Porsch
+bibliography: ref.bib
+output: word_document
+---
+
+
+
+```{r, echo=F, message=F}
+library(tidyverse)
+data(iris)
+```
+
+# The *Iris* flower data set
+
+The *Iris* flower data set is a multivariate data set introduced by Ronald Fisher in **1936**.
+Also see @Fisher1936 for more information, but you also cite as this [@Fisher1936].
+
+## This is a second header
+
+One can compute the mean of variable $x$ (indexed by $i$) of size $P$ as 
+
+$$\frac{1}{P} \sum^P_{i=1} x_i $$
+
+Lists are also easy:
+
+* one
+* two
+* three
+
+You can also have numbered lists:
+
+(@)  My first example will be numbered (1).
+(@)  My second example will be numbered (2).
+
+Explanation of examples.
+
+(@)  My third example will be numbered (3).
+
+**Numbering throughout the whole document**
+
+1. First item
+2. Second item
+3. Third item
+
+So it is all very ~~complicated~~ easy.
+
+# Lets show some plots
+
+```{r}
+ggplot(iris, aes(x=Sepal.Length, y=Sepal.Width, color=Species)) + 
+  geom_point()
+```
+
+* you can use the header of each code chunk to adjust figure size, caption and others
+* Figures are relatively easy
+* alternatively you can also save the file to disk and then import them
+
+# Tables
+
+```{r}
+dd <- iris %>%
+  gather("variable", "value", 1:4) %>%
+  group_by(Species, variable) %>%
+  summarise_each(funs(mean, sd, max, min))
+knitr::kable(dd)
+```
+
+# Tables of Models
+
+```{r}
+library(pander)
+n <- 100
+x <- rnorm(n)
+y <- 2*x + rnorm(n)
+ll <- lm(y~x)
+panderOptions("digits", 2)
+pander(ll)
+```
+
+## Some notes in regards to tables
+
+* Tables are tricky
+* as more complicated as more difficult it gets
+* consider writing in latex
+* consider writing your papers in Markdown first and then do style adjustments later
+* there are multiple templates for different journals
+
+# Inline code
+
+You can also have inline code.
+So you can say that the mean of `Sepal.Width` is `r mean(iris$Sepal.Width)`.
+
+# References
+
+
+

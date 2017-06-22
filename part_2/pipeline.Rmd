@@ -75,9 +75,6 @@ results.txt: analysis.R data_modidified.csv
 
 **Lets see how it looks like**
 
-## Exercise
-
-**Use your the results and scripts from your previous task to write a makefile**
 
 # Some Advanced Makefiles Stuff
 
@@ -127,3 +124,7 @@ plotting.txt: formating.r function.r
 
 * `$^` right side of `:`
 * `$@` left side of `:`
+
+## Exercise
+
+**Use your the results and scripts from your previous task to write a makefile**

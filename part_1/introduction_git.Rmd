@@ -287,6 +287,7 @@ You can use `git mergetool` to manage merge conflicts
     * decide who does what (tasks will be given)
     * make a new github repository
     * it should be one script which does all the work
+    * each person push to the repository in question
 
 ## The datasets and Research Questions
 
