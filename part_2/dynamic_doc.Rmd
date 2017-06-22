@@ -1,0 +1,82 @@
+---
+title: "Dynamic Documents"
+subtitle: "Writing Your Papers Automatically"
+author: Robert M. Porsch
+output:
+  ioslides_presentation:
+    smaller: false
+---
+
+# Introduction
+
+## What are dynamic documents
+
+* documents which change based on the underlying code
+* Written not in word but in "code"
+* `markdown` or `latex`
+* compiling of documents is necessary
+
+## Pro and Cons
+
+**Pro:**
+
+* no copy pasting
+* less errors
+* coherent pipeline
+* version controlled
+
+**Con:**
+
+* harder to collaborate
+* you don't "see" what you write
+* some stuff is harder
+
+# Markdown
+
+## What is markdown
+
+* a simple syntax language to write HTML
+* takes the pain out of writing HTML
+* very easy and clean
+
+```
+# Heading 1
+## Heading 2
+### Heading 3
+```
+
+## Some more markdown
+
+```
+**bold**
+*intalic*
+$\sum^P_{p=1} x_p$
+```
+
+```
+* point 1
+* point 2
+
+1. point 1
+2. point 2
+```
+
+## Some more Markdown
+
+* you can use predefined formats 
+* tables and figures are easy to integrate
+
+```
+![](file.jpeg)
+```
+
+# rmarkdown
+
+## What is rmarkdown
+
+* an R flavoured version of markdown
+* enables integration of R code (or a number of other languages into markdown)
+* dynamic documents
+
+## Example
+

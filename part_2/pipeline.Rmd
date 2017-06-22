@@ -71,6 +71,59 @@ results.txt: analysis.R data_modidified.csv
   Rscript $<
 ```
 
+## Example
+
+**Lets see how it looks like**
+
 ## Exercise
 
 **Use your the results and scripts from your previous task to write a makefile**
+
+# Some Advanced Makefiles Stuff
+
+## Define variables
+
+```
+data.csv: get_data.r
+  R CMD BATCH get_data.r
+
+RR := R CMD BATCH
+
+data.csv: get_data.r
+  $(RR) get_data.r
+```
+
+## Some other operators
+
+```
+histogram.png: histogram.tsv
+	Rscript -e 'library(ggplot2); qplot(Length, Freq, data=read.delim("$<")); ggsave("$@")'
+```
+
+## Some more stuff
+
+```
+.PHONY: all clean
+.DELETE_ON_ERROR:
+.SECONDARY:
+```
+
+* `.PHONY` tells make that those are not files/directories
+* `.DELETE_ON_ERROR` delete files of a target if it fails
+* `.SECONDARY` prevents the deletion of intermediate files
+
+## Some more stuff
+
+```
+all: $(Main)
+  @echo Its done!!!
+```
+
+**Some other stuff**
+```
+plotting.txt: formating.r function.r
+  Rscript $^ $@
+```
+
+* `$^` right side of `:`
+* `$@` left side of `:`

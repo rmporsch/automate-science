@@ -181,14 +181,15 @@ head(iris)
 ## Task View
 
 ```bash
-git clone ...
+git clone git@github.com:rmporsch/git_exercise.git # or
+git clone https://github.com/rmporsch/git_exercise.git
 ```
 
 * Complete tasks in `analysis.R`
 * create a new repository on github (you need to make an account)
 * invite your team members
 * use `git push` to add your work
-* **I purposefully  did not explain everything**
+* **I purposefully did not explain everything**
 
 
 # Branches
