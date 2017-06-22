@@ -183,5 +183,7 @@ The mean speed of analysed cars was `r mean(cars$speed)`.
 
 ## Software
 
+* R (Rtools)
 * Rstudio
 * Git
+

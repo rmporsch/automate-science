@@ -48,7 +48,7 @@ You actually only need 3 files (data.csv, analysis.R, results.txt)
 
 ## Snapshots
 
-<img src="https://git-scm.com/book/en/v2/images/snapshots.png" width="600" height="100" />
+<img src="https://git-scm.com/book/en/v2/images/snapshots.png" width="700" height="200" />
 
 * git takes a snapshot of all your files  (line a picture)
 * if files haven't changed it creates a link to the previous identical file
@@ -68,7 +68,7 @@ You actually only need 3 files (data.csv, analysis.R, results.txt)
 
 ## The Three States
 
-<img src="https://git-scm.com/book/en/v2/images/areas.png" width="400" height="400" />
+<img src="https://git-scm.com/book/en/v2/images/areas.png" width="500" height="400" />
 
 ## Basic Workflow
 
@@ -223,7 +223,7 @@ git branch testing
 git checkout testing
 ```
 
-<img src="https://git-scm.com/book/en/v2/images/head-to-master.png" width="600" height="100" />
+<img src="https://git-scm.com/book/en/v2/images/head-to-master.png" width="500" height="200" />
 
 ## Branches
 
@@ -231,7 +231,7 @@ git checkout testing
 git checkout testing
 ```
 
-<img src="https://git-scm.com/book/en/v2/images/head-to-testing.png" width="600" height="100" />
+<img src="https://git-scm.com/book/en/v2/images/head-to-testing.png" width="500" height="200" />
 
 
 ## Branches
@@ -241,7 +241,7 @@ git commit -a -m 'made a change'
 git checkout master
 ```
 
-<img src="https://git-scm.com/book/en/v2/images/checkout-master.png" width="600" height="100" />
+<img src="https://git-scm.com/book/en/v2/images/checkout-master.png" width="500" height="200" />
 
 ## Branches
 
@@ -249,7 +249,7 @@ git checkout master
 git commit -a -m 'made other changes'
 ```
 
-<img src="https://git-scm.com/book/en/v2/images/advance-master.png" width="600" height="100" />
+<img src="https://git-scm.com/book/en/v2/images/advance-master.png" width="500" height="250" />
 
 ## Merging
 
@@ -291,6 +291,8 @@ You can use `git mergetool` to manage merge conflicts
 
 ## The datasets and Research Questions
 
+Look into the cloned repository from earlier
+
 ## The tasks
 
 * What are the summary statistics
@@ -301,12 +303,17 @@ You can use `git mergetool` to manage merge conflicts
   * What variables are relevant
 * Give a brief presentation
 
-**Some example:**
+## Some example
 
 ```{r}
 data(iris)
 print(summary(iris))
+```
 
+
+## Some example
+
+```{r}
 jpeg("histogram.jpeg")
 hist(iris[,2])
 dev.off()
