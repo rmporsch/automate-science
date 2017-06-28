@@ -11,11 +11,12 @@ output:
 
 ## Topics
 
+* Introduction
 * Version Control
 * Analysis Pipeline 
-* Dynamic Documents
+  * Dynamic Documents
 
-## About the Me
+## About Me
 
 * PhD student at the Department of Psychiatry
 * Actually at the Center of Genomic Science (CGS)
@@ -24,7 +25,7 @@ output:
 
 <img src="hri-s.jpg" width="400" height="300" />
 
-# Why is reproducibility important?
+# What is reproducibility and Why is it important?
 
 ## Some general statistics
 
@@ -47,7 +48,7 @@ However, these two are intertwined
 
 ## Crisis of Replication in Psychology
 
-* Only 36 of 100 papers from high-ranking journals were successfully replicated ([Source](https://www.ncbi.nlm.nih.gov/pubmed/26315443))
+* Only 36 of 100 papers from high-ranking journals were successfully [replicated](https://www.ncbi.nlm.nih.gov/pubmed/26315443)
 * Social Psychology had a lower replication rate than Cognitive Psychology
 
 **Why is that? (from a Data perspective)**
@@ -61,11 +62,11 @@ However, these two are intertwined
 
 ## Replication Problems in Medicine
 
-* FDA found flaws in 10-20% of studies (1977-90) ([Source](https://doi.org/10.1080%2F08989629208573811))
-* in a sample of 49 studies ([Source](https://www.ncbi.nlm.nih.gov/pubmed/16014596))
-  * 16% of studies investigating therapy effects were contradicted by later studies
-  * 44% were replicated
-  * 24% were never challenged 
+* [FDA](https://doi.org/10.1080%2F08989629208573811) found flaws in 10-20% of studies (1977-90) ()
+* in a sample of 49 [studies](https://www.ncbi.nlm.nih.gov/pubmed/16014596))
+    * 16% of studies investigating therapy effects were contradicted by later studies
+    * 44% were replicated
+    * 24% were never challenged 
 
 * data is rarely published in medical trail studies
 * protocols are not shared
@@ -74,13 +75,11 @@ However, these two are intertwined
 
 ## How can reproducibility help?
 
-* Publish your data
-* Publish your analysis script
-* You add credibility and accountability
-* Enable others to build on your data/analysis
-
 **Some Steps you can do:**
 
+* Publish your data
+* Publish your analysis script
+* Enable others to build on to your data/analysis
 * make your data citeable
 * have a public repository
 
@@ -88,6 +87,7 @@ However, these two are intertwined
 
 * you automate your whole analysis
 * you automate your paper
+* you add credibility and accountability
 
 # Example
 
@@ -125,11 +125,14 @@ What factors are correlated with diabetes status?
 * the next iteration does not mean its a better model
 * each step needs to be documented (in case you want to go back)
 
-## Version Control Data Processing
+## Version Control
+
+**Keep the process under version control**
 
 <img src="branch.png"/>
 
-* each branch is a different model
+* each branch is a different model/version/idea
+* each dot is a different state of that idea
 * allows to keep track of what you have done
 * allows to go back to previous versions
 
@@ -138,11 +141,14 @@ What factors are correlated with diabetes status?
 * copying from the analysis to the report can create mistakes
 * labor intensive
 * not fun
-* might need to do it multiple times
+* you might need to do it multiple times
 
-## Presentation of your Results
+**Solution:**
+Automate it!
 
-* *dynamic documents* are responsive to changes in the source code
+## Automation via dynamic documents
+
+*dynamic documents* are responsive to changes in the source code
 
 **Lets say you have the following code:**
 
@@ -187,3 +193,26 @@ The mean speed of analysed cars was `r mean(cars$speed)`.
 * Rstudio
 * Git
 
+
+## What is R?
+
+R is an open source programming language and software environment for **statistical computing**
+
+* rich infrastructure and environment
+* made by statistician for statistician
+* high level programming language
+* command line interpreter
+* Rtools adds additional functions to your system
+
+![](https://en.wikipedia.org/wiki/File:R_logo.svg)
+
+**Rstudio** makes R prettier and easier to use.
+
+## What is Git?
+
+* git is a version control system developed by Linus Torvalds (creator of Linux)
+* used to manage source code in software development
+* drives today's software development
+* the core principle of [Github](www.github.com)
+
+![](https://upload.wikimedia.org/wikipedia/en/thumb/f/fc/Git_session.png/300px-Git_session.png)
