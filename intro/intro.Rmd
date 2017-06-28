@@ -204,7 +204,7 @@ R is an open source programming language and software environment for **statisti
 * command line interpreter
 * Rtools adds additional functions to your system
 
-![](https://en.wikipedia.org/wiki/File:R_logo.svg)
+![](https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/R_logo.svg/220px-R_logo.svg.png)
 
 **Rstudio** makes R prettier and easier to use.
 
@@ -215,4 +215,4 @@ R is an open source programming language and software environment for **statisti
 * drives today's software development
 * the core principle of [Github](www.github.com)
 
-![](https://upload.wikimedia.org/wikipedia/en/thumb/f/fc/Git_session.png/300px-Git_session.png)
+![](https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Git-logo.svg/150px-Git-logo.svg.png)
